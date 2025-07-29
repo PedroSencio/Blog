@@ -69,8 +69,8 @@ export default function Home() {
 
     <div id="main">
       <div id="follow">
-        <button id="git" href='https://github.com/PedroSencio'> <img src="/img/github.png" alt="" /></button>
-        <button id="link"> <img src="/img/linkedin.png" alt="" /></button>
+        <button id="git" onClick={() => window.open("https://github.com/PedroSencio", "_blank")}> <img src="/img/github.png" alt="" /></button>
+        <button id="link" onClick={() => window.open("https://www.linkedin.com/in/pedro-henrique-sencio-3b74a6275/", "_blank")}> <img src="/img/linkedin.png" alt="" /></button>
       </div>
         <div id="background">
             <video 
