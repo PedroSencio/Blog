@@ -69,7 +69,7 @@ export default function Home() {
 
     <div id="main">
       <div id="follow">
-        <button id="git"> <img src="/img/github.png" alt="" /></button>
+        <button id="git" href='https://github.com/PedroSencio'> <img src="/img/github.png" alt="" /></button>
         <button id="link"> <img src="/img/linkedin.png" alt="" /></button>
       </div>
         <div id="background">
