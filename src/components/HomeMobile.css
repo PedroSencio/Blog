@@ -1,0 +1,213 @@
+#mobile-content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    z-index: 2;
+    overflow-y: auto;
+    color: white;
+}
+#background-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+#background-mobile video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#mobile-header {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+}
+
+#mobile-header span {
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    height: 100px;
+    font-weight: bold;
+    padding: 0;
+}
+
+
+#mobile-header-title{
+    height: 100px;
+    font-weight: bold;
+}
+
+#btns-mobile-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#btns-mobile-header button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgb(100, 4, 138);
+    box-shadow: 3px 3px 5px rgba(79, 9, 102, 0.748);
+    padding: 10px 20px;
+    font-size: 16px;
+    height: 60px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#sobre-mim-mobile-box {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    top: 700px;
+    font-size: 20px;
+}
+
+#sobre-mim-mobile {
+    width: 90%;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#foto-sobre-mim-box-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#foto-sobre-mim-box-mobile img {
+    width: 280px;
+    height: 280px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgb(100, 4, 138);
+    box-shadow: 3px 3px 20px rgb(100, 4, 138);
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+    
+}
+
+#sobre-mim-mobile p {
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+#trajetoria-mobile-box {
+    position: absolute;
+    top: 1700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#trajetoria-mobile-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+#line-mobile {
+    height: 0px;
+    width: 3px;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #aa64ff, #bb77ff);
+    transition: height 8s ease-in-out;
+    position: relative;
+}
+#line-mobile::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -3.5px;
+    width: 10px;
+    height: 10px;
+    background-color: #aa64ff;
+    border-radius: 50%;
+    transition: top 8s ease-in-out;
+    box-shadow: #aa64ff 0px 0px 40px 20px;
+}
+
+#trajetoria-mobile-box.visible #line-mobile {
+    height: 100px;
+}
+#trajetoria-mobile {
+    width: 70%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#conhecimentos-mobile-box {
+    position: absolute;
+    font-size: 12px;
+    top: 2600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#conhecimentos-mobile-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.projeto-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
