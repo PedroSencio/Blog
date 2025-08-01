@@ -75,7 +75,18 @@ export default function Home() {
   return (
     <div id="main">
       {!isMobile ? (
+
         <>
+        <div id="all">
+          <video
+            className="background-video"
+            src="/videos/background.mp4"
+            type="video/mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
           <div id="follow">
             <button id="git" onClick={() => window.open("https://github.com/PedroSencio", "_blank")}>
               <img src="/img/github.png" alt="" />
@@ -83,16 +94,6 @@ export default function Home() {
             <button id="link" onClick={() => window.open("https://www.linkedin.com/in/pedro-henrique-sencio-3b74a6275/", "_blank")}>
               <img src="/img/linkedin.png" alt="" />
             </button>
-          </div>
-          <div id="background">
-            <video
-              src="/videos/background.mp4"
-              type="video/mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
           </div>
           <div id="page-1">
             <div style={{ position: 'relative', height: 'auto', marginBottom: '40px' }}>
@@ -110,9 +111,18 @@ export default function Home() {
               />
             </div>
             <div id="box-btn-page-1">
-              <button>Sobre mim</button>
-              <button>Trajetória</button>
-              <button>Projetos</button>
+              <button onClick={() => {
+                const el = document.getElementById('sobre-mim-box');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}>Sobre mim</button>
+              <button onClick={() => {
+                const el = document.getElementById('trajetoria-box');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}>Trajetória</button>
+              <button onClick={() => {
+                const el = document.getElementById('projetos-box');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}>Projetos</button>
             </div>
           </div>
           <div id="page-2">
@@ -190,6 +200,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
         </>
       ) : (
         <div id="mobile-content">
@@ -216,9 +227,18 @@ export default function Home() {
           <span id="r">r</span>
           </div>
           <div id="btns-mobile-header">
-            <button>Sobre mim</button>
-            <button>Trajetória</button>
-            <button>Projetos</button>
+            <button onClick={() => {
+              const el = document.getElementById('sobre-mim-mobile-box');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}>Sobre mim</button>
+            <button onClick={() => {
+              const el = document.getElementById('trajetoria-mobile-box');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}>Trajetória</button>
+            <button onClick={() => {
+              const el = document.getElementById('conhecimentos-mobile-box');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}>Projetos</button>
           </div>
           </div>
           <div id="sobre-mim-mobile-box">

@@ -1,3 +1,13 @@
+#background-video, .background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 0;
+}
 body {
     background-color: black;
 }
@@ -6,19 +16,29 @@ body {
     height: 100vh;
     overflow-y: auto;
     width: 100vw;
+    z-index: 0;
 }
-#background {
+#background-video {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
+    z-index: 0;
+}
+#all {
+    min-height: 800px;
+    overflow-y: auto;
+    width: 100vw;
+    background-color: transparent;
+    z-index: 1;
+    height: auto;
 }
 #page-1 {
     width: 100vw;
     height: 100vh;
     margin: 0;
+    z-index: 0;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -74,6 +94,7 @@ body {
 #box-btn-page-1 button{
     margin-left: 20px;
     margin-right: 20px;
+    position: relative;
     background-color: transparent;
     border: 1px solid #aa64ff98;
     transition: 0.20s all ease-in-out;
@@ -93,6 +114,8 @@ body {
     height: auto;
     margin: 0;
     text-align: center;
+        position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -324,6 +347,7 @@ body {
 }
 
 #content-projetos{
+    position: relative;
     height: auto;
     width: 1000px;
     display: grid;
