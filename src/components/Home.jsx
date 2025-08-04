@@ -21,17 +21,30 @@ export default function Home() {
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
-    const sobreMimBox = document.getElementById('sobre-mim-box');
-    if (sobreMimBox) {
-      observer.observe(sobreMimBox);
-    }
+    // Observar todas as seções principais
+    const sections = [
+      'sobre-mim-box',
+      'trajetoria-box', 
+      'projetos-box',
+      'portifolio'
+    ];
 
-    const trajetoriaBox = document.getElementById('trajetoria-box');
-    if (trajetoriaBox) {
-      observer.observe(trajetoriaBox);
-    }
+    sections.forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    // Observar boxes de conhecimentos individualmente
+    const projetoBoxes = document.querySelectorAll('.projeto-box');
+    projetoBoxes.forEach(box => observer.observe(box));
+
+    // Observar items do portfólio
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    portfolioItems.forEach(item => observer.observe(item));
 
     // Box-shadow e movimento que segue o mouse
     const handleMouseMove = (e) => {
@@ -122,7 +135,11 @@ export default function Home() {
               <button onClick={() => {
                 const el = document.getElementById('projetos-box');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}>Projetos</button>
+              }}>Conhecimentos</button>
+              <button onClick={() => {
+                const el = document.getElementById('portifolio');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}>Portfólio</button>
             </div>
           </div>
           <div id="page-2">
@@ -196,6 +213,27 @@ export default function Home() {
                   <img src="/img/php.png" alt="" />
                   <h2>PHP</h2>
                   <p>Experiência da linguagem através de projeto em desenvolvimento</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="page-5">
+            <div id="portifolio">
+              <h1>Portfólio</h1>
+              <div id="content-portifolio">
+                <div className="portfolio-item" id="task">
+                  <button onClick={() => window.open("https://taskmanagerps.netlify.app", "_blank")}>
+                    <img src="/img/TaskManager.png" alt="Task Manager" />
+                  </button>
+                  <h2>Task Manager</h2>
+                  <p>Gerenciador de tarefas desenvolvido com React e Node.js, permitindo aos usuários criar, editar e excluir tarefas.</p>
+                </div>
+                <div className="portfolio-item" id="galeria">
+                  <button>
+                    <img src="/img/galeria.png" alt="Galeria" />
+                  </button>
+                  <h2>Galeria de Imagens</h2>
+                  <p>Aplicação de galeria de imagens desenvolvida com HTML, CSS e JavaScript, permitindo aos usuários visualizar e organizar imagens.</p>
                 </div>
               </div>
             </div>
@@ -308,6 +346,7 @@ export default function Home() {
               </div>
           </div>
         </div>
+        
         </div>
       )}
     </div>
